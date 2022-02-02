@@ -7,10 +7,29 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <% if(kindofDay==="Saturday" || kindofDay==="Sunday"){%>
-            <h1 style="color:#D5C7E8";>It is <%=kindofDay%> To-do-List </h1>
-        <%}else{%>
-            <h1 style="color:#F2B5D4";>It is <%=kindofDay%></h1>
-        <%}%>
+        <h1><%= kindofDay %></h1>
+        <ul>
+            <li>
+                Buy Food.
+            </li>
+            <li>
+                Cook Food.
+            </li>
+            <li>
+                Eat food.
+            </li>
+            <% for(var i=0;i<newListItems.length;i++){ %>
+               <li> 
+                   <%= newListItems[i] %>
+
+                </li>
+
+           <% } %>
+           
+        </ul>
+        <form class="" action="/" method="post">
+            <input type="text" name="newItem">
+            <button type="submit" name="button">Add</button>
+        </form>
     </body>
 </html>
